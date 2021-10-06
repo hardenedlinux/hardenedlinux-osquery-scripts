@@ -54,13 +54,6 @@
       "description": "Retrieves all the jobs scheduled in crontab in the target system.",
       "snapshot": true
     },
-    "deb_packages": {
-      "query": "SELECT * FROM deb_packages;",
-      "interval": 86400,
-      "description": "Display all installed DEB packages",
-      "snapshot": true,
-      "platform": "ubuntu"
-    },
     "dns_resolvers": {
       "query": "SELECT * FROM dns_resolvers;",
       "interval": 3600,
@@ -256,29 +249,25 @@
       "/etc/pam.d/%%",
       "/etc/resolv.conf",
       "/etc/rc%/%%",
-      "/etc/my.cnf",
+      "/etc/mtab",
       "/etc/modules",
       "/etc/hosts",
       "/etc/hostname",
       "/etc/fstab",
       "/etc/crontab",
       "/etc/cron%/%%",
-      "/etc/init/%%",
-      "/etc/rsyslog.conf"
+      "/etc/rsyslog.conf",
+      "/etc/ssh/%%"
     ],
     "binaries": [
-      "/usr/bin/%%",
-      "/usr/sbin/%%",
-      "/bin/%%",
-      "/sbin/%%",
-      "/usr/local/bin/%%",
-      "/usr/local/sbin/%%"
+      "/run/current-system/sw/sbin/%%",
+      "/run/current-system/sw/bin/%%",
+      "/run/wrappers/bin/%%",
+      "/run/current-system/systemd/bin/%%",
+      "/home/%%/.nix-profile/bin/%%"
     ]
   },
   "events": {
     "disable_subscribers": ["user_events"]
-  },
-  "packs": {
-    "ossec-rootkit": "/etc/osquery/packs/ossec-rootkit.conf"
   }
 }
