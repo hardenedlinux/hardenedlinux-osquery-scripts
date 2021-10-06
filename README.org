@@ -4,3 +4,4 @@
 * DOING NixOS [0/1]
 
 - [ ] [] https://github.com/christopherj525/osquery_cis_shim
+- [ ] [] https://github.com/palantir/osquery-configuration
